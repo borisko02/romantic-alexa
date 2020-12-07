@@ -1,3 +1,5 @@
+#make you install all the python packages by google them.
+
 import speech_recognition as sr
 import pyttsx3
 import pywhatkit
@@ -10,12 +12,13 @@ engine = pyttsx3.init()
 voices = engine.getProperty('voices')
 engine.setProperty('voice', voices[1].id)
 
+# speak the text passed in command
 
 def talk(text):
     engine.say(text)
     engine.runAndWait()
 
-
+# listen to the command through the microphone and return the text command
 def take_command():
     try:
         with sr.Microphone() as source:
